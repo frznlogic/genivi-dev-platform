@@ -11,6 +11,7 @@ BBLAYERS ?= " \
   ${TOPDIR}/../poky/meta-yocto-bsp \
   ${TOPDIR}/../meta-ivi/meta-ivi \
   ${TOPDIR}/../meta-ivi/meta-ivi-bsp \
+  ${TOPDIR}/../meta-sdl \
   ${TOPDIR}/../meta-openembedded/meta-oe \
   ${TOPDIR}/../meta-openembedded/meta-filesystems \
   ${TOPDIR}/../meta-openembedded/meta-ruby \
