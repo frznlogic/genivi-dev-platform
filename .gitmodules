@@ -52,4 +52,4 @@
 	url = https://github.com/klihub/meta-flatpak
 [submodule "meta-sdl"]
 	path = meta-sdl
-	url = git://github.com/gunnarx/meta-sdl.git
+	url = git://github.com/phongt/meta-sdl.git
