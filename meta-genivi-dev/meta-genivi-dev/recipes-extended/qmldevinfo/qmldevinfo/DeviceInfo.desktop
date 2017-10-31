@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Device Info
+Type=Application
+Icon=
+Unit=Device Info
+Exec=bwrap --ro-bind / / --unshare-user --uid 128 --gid 512
+/usr/bin/EGLWLInputEventExample -platform wayland
+
