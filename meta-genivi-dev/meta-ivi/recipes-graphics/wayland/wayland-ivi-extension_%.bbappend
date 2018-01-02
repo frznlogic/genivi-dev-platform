@@ -9,10 +9,12 @@ MOCK_NAVIGATION_DESKTOP_FILE="EGLWLMockNavigation.desktop"
 SRC_URI_append = "                         \
     file://${INPUT_EXAMPLE_DESKTOP_FILE}   \
     file://${MOCK_NAVIGATION_DESKTOP_FILE} \
+    file://0001_screen_remove_layer_not_supported.patch \
     "
 
 FILES_${PN} += "\
     /usr/share/applications/* \
+    /usr/share/wayland-protocols/stable/ivi-application/ivi-application.xml \
     "
 
 do_install_append() {
