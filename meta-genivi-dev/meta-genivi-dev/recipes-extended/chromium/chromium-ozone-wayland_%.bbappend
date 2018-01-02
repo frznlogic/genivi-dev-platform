@@ -3,8 +3,8 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 DEPENDS += "mesa wayland-ivi-extension"
 DEPENDS_append_rcar-gen3 = " libgbm"
 
+#    file://0001-seccomp-bpf-Allow-MADV_FREE-in-madvise-2.patch 
 SRC_URI += "\
-    file://0001-seccomp-bpf-Allow-MADV_FREE-in-madvise-2.patch \
     file://google-chrome.desktop \
 "
 SRC_URI_append_rcar-gen3 = " file://fix-egl-version.patch"
