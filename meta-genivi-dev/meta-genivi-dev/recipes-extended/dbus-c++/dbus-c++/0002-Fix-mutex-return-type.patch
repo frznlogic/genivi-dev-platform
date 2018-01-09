@@ -1,0 +1,38 @@
+diff --git a/include/dbus-c++/dispatcher.h b/include/dbus-c++/dispatcher.h
+index b5b5536..df4882a 100644
+--- a/include/dbus-c++/dispatcher.h
++++ b/include/dbus-c++/dispatcher.h
+@@ -230,13 +230,14 @@ typedef Mutex *(*MutexNewFn)();
+ typedef void (*MutexUnlockFn)(Mutex *mx);
+ 
+ #ifndef DBUS_HAS_RECURSIVE_MUTEX
+-typedef bool (*MutexFreeFn)(Mutex *mx);
+-typedef bool (*MutexLockFn)(Mutex *mx);
++typedef bool MUTEX_RETURN_TYPE;
+ #else
+-typedef void (*MutexFreeFn)(Mutex *mx);
+-typedef void (*MutexLockFn)(Mutex *mx);
++typedef void MUTEX_RETURN_TYPE;
+ #endif//DBUS_HAS_RECURSIVE_MUTEX
+ 
++typedef MUTEX_RETURN_TYPE (*MutexFreeFn)(Mutex *mx);
++typedef MUTEX_RETURN_TYPE (*MutexLockFn)(Mutex *mx);
++
+ typedef CondVar *(*CondVarNewFn)();
+ typedef void (*CondVarFreeFn)(CondVar *cv);
+ typedef void (*CondVarWaitFn)(CondVar *cv, Mutex *mx);
+@@ -267,12 +268,12 @@ struct Threading
+     return new Mx;
+   }
+ 
+-  static void mutex_free(Mutex *mx)
++  static MUTEX_RETURN_TYPE mutex_free(Mutex *mx)
+   {
+     delete mx;
+   }
+ 
+-  static void mutex_lock(Mutex *mx)
++  static MUTEX_RETURN_TYPE mutex_lock(Mutex *mx)
+   {
+     mx->lock();
+   }
