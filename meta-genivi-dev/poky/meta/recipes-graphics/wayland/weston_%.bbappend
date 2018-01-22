@@ -50,4 +50,7 @@ do_install_append() {
     install -m 0644 ${WORKDIR}/weston.ini ${D}${WESTON_INI_CONFIG}/weston.ini
 }
 
-FILES_${PN} += "${systemd_unitdir}/system/*"
+FILES_${PN} += " \
+    ${systemd_unitdir}/system/* \
+    /etc/xdg/weston/* \
+"
